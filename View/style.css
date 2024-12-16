@@ -1,0 +1,20 @@
+.menubar{font-size: 40px;}
+.upper{height: 55vh;}
+.lower{height: 40vh;}
+
+/* 共通フォント */
+* {
+  font-family: Arial, sans-serif;
+  font-size: large;
+  font-weight: 800;
+}
+
+/* Google Fonts */
+.agu-display {
+  font-family: "Agu Display", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings:
+    "MORF" 0;
+}

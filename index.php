@@ -1,3 +1,3 @@
 <?php
-include 'View/field.php';
+include 'View/main-page.php';
 ?>
