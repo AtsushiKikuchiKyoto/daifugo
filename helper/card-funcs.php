@@ -1,4 +1,19 @@
 <?php
+function allCards(){
+  return $cards = [
+    ["H",1],["H",2],["H",3],["H",4],["H",5],["H",6],
+    ["D",1],["D",2],["D",3],["D",4],["D",5],["D",6]
+  ];
+}
+function shuffleCards($cards){
+  $shuffleCards = [];
+  $times = count($cards);
+  for ($i = 0; $i < $times; $i++) {
+    $index = rand(0, $times-1-$i);
+    list($cards, $shuffleCards) = moveCard($cards, $shuffleCards, $index);
+  }
+  return $shuffleCards;
+}
 function showNum($card){
   return $card[1]."\n";
 }
