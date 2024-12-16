@@ -6,11 +6,11 @@
 
   <body>
     <div class="wrapper" >
-      <div class="menubar col-12 bg-dark  text-white text-center agu-display">Daifu_GO!</div>
+      <div class="menubar col-12 bg-dark text-white text-center agu-display">Daifu_GO!</div>
       <div class="upper d-flex">
 
         <!-- 状態エリア -->
-        <div class="left col-4 bg-secondary bg-gradient text-white p-2">
+        <div class="left col-4 bg-secondary bg-gradient text-white p-2 shadow-lg">
           <?php include 'View/left.php'; ?>
         </div>
 

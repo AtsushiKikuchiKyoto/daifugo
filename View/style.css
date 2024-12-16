@@ -1,6 +1,9 @@
 .menubar{font-size: 40px;}
 .upper{height: 55vh;}
 .lower{height: 40vh;}
+.suit{width: 60%;}
+.number{font-size: xx-large;}
+.card-custom{height: 10vw;}
 
 /* 共通フォント */
 * {
