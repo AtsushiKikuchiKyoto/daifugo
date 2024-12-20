@@ -15,20 +15,31 @@ function shuffleCards($cards){
   return $shuffleCards;
 }
 function showNum($card){
-  return $card[1]."\n";
+  echo $card[1]."\n";
 }
 function showSuit($card){
-  return $card[0]."\n";
+  echo $card[0]."\n";
 }
 function showCard($card){
-  return $card[0].$card[1]."\n";
+  echo $card[0].$card[1]."\n";
 }
 function showCards($cards){
   $output = "";
   foreach ($cards as $card) {
     $output .= $card[0].$card[1].",";
   }
-  return $output =  rtrim($output, ",")."\n";
+  echo $output =  rtrim($output, ",")."\n";
+}
+function showPlayersCards($playersCards){
+  $output = "";
+  foreach ($playersCards as $cards) {
+    $output .= "[";
+    foreach ($cards as $card) {
+      $output .= $card[0].$card[1].",";
+    }
+    $output .= "]";
+  }
+  echo $output =  rtrim($output, ",")."\n";
 }
 function addCard($cards,$card){
   array_push($cards, $card);
@@ -42,6 +53,21 @@ function moveCard($fromCards, $toCards, $index){
   $moveCard = array_splice($fromCards, $index, 1)[0];
   array_push($toCards, $moveCard);
   return [$fromCards, $toCards];
+}
+function dealCards($allCards, $playerNumber){
+  $quo = floor( count($allCards) / $playerNumber );
+  $rem =        count($allCards) % $playerNumber;
+  $playersCards = [];
+  
+  for ($i = 0; $i < $rem; $i++) {
+    $moveCards = array_splice($allCards, 0, $quo+1);
+    array_push($playersCards, $moveCards);
+  }
+  for ($i = 0; $i < $playerNumber - $rem; $i++) {
+    $moveCards = array_splice($allCards, 0, $quo);
+    array_push($playersCards, $moveCards);
+  }
+  return $playersCards;
 }
 function isValidCards($cards){
   $allowedSuits = [ "H", "D", "S", "C" ];
